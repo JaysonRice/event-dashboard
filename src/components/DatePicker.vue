@@ -2,6 +2,7 @@
   <v-date-picker
     v-model="searchRange"
     @change="selectDate"
+    header-color="indigo"
     range
     full-width
     elevation="2"

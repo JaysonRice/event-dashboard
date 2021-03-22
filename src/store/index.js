@@ -14,15 +14,23 @@ const apiURL = (
 
 export default new Vuex.Store({
   state: {
+    startDate: null,
+    endDate: null,
     sporting: {},
   },
   mutations: {
+    setDate(state, payload) {
+      state.startDate = payload.startDate;
+      state.endDate = payload.endDate;
+    },
     setSportingEvents(state, payload) {
+      state.sporting = payload;
       state.sporting = payload;
     },
   },
   actions: {
-    async getEventsForDateRange({ dispatch }, range) {
+    async getEventsForDateRange({ commit, dispatch }, range) {
+      commit("setDate", range);
       dispatch("getSportingEvents", range);
     },
 
