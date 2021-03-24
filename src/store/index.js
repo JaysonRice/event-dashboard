@@ -17,6 +17,8 @@ export default new Vuex.Store({
     startDate: null,
     endDate: null,
     sporting: {},
+    theater: {},
+    concert: {},
   },
   mutations: {
     setDate(state, payload) {
@@ -25,13 +27,20 @@ export default new Vuex.Store({
     },
     setSportingEvents(state, payload) {
       state.sporting = payload;
-      state.sporting = payload;
+    },
+    setTheaterEvents(state, payload) {
+      state.theater = payload;
+    },
+    setConcertEvents(state, payload) {
+      state.concert = payload;
     },
   },
   actions: {
     async getEventsForDateRange({ commit, dispatch }, range) {
       commit("setDate", range);
       dispatch("getSportingEvents", range);
+      dispatch("getTheaterEvents", range);
+      dispatch("getConcertEvents", range);
     },
 
     async getSportingEvents({ commit }, range) {
@@ -39,7 +48,19 @@ export default new Vuex.Store({
       const res = await fetch(url);
       const data = await res.json();
       commit("setSportingEvents", data);
-      console.log(data);
+    },
+    async getTheaterEvents({ commit }, range) {
+      const url = apiURL("theater", range);
+      const res = await fetch(url);
+      const data = await res.json();
+      commit("setTheaterEvents", data);
+    },
+    async getConcertEvents({ commit }, range) {
+      const url = apiURL("concert", range);
+      const res = await fetch(url);
+      const data = await res.json();
+      debugger;
+      commit("setConcertEvents", data);
     },
   },
   modules: {},
