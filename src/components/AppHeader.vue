@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app class="white--text indigo lighten-1">
+  <v-app-bar app class="white--text indigo">
     <h1>Event Finder</h1>
     <v-spacer></v-spacer>
     <h3 v-if="renderDate">

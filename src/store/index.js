@@ -53,14 +53,38 @@ export default new Vuex.Store({
       const url = apiURL("theater", range);
       const res = await fetch(url);
       const data = await res.json();
+      debugger;
       commit("setTheaterEvents", data);
     },
     async getConcertEvents({ commit }, range) {
       const url = apiURL("concert", range);
       const res = await fetch(url);
       const data = await res.json();
-      debugger;
+
       commit("setConcertEvents", data);
+    },
+  },
+  getters: {
+    topSporting(state) {
+      if (!state.sporting.events) {
+        return [];
+      }
+
+      return state.sporting.events.slice(0, 3);
+    },
+    topConcerts(state) {
+      if (!state.concert.events) {
+        return [];
+      }
+
+      return state.concert.events.slice(0, 3);
+    },
+    topTheater(state) {
+      if (!state.theater.events) {
+        return [];
+      }
+
+      return state.theater.events.slice(0, 3);
     },
   },
   modules: {},

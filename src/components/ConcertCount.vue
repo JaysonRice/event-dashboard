@@ -1,11 +1,11 @@
 <template>
-  <v-card class="pa-4" color="amber lighten-2">
+  <v-card class="pa-4" color="yellow lighten-2">
     <p class="text-center">
-      <v-icon x-large color="black "> mdi-music</v-icon>
+      <v-icon x-large color="indigo"> mdi-music</v-icon>
     </p>
 
-    <h3 class="text-center">{{ count }}</h3>
-    <h5 class="text-center">Concerts Events</h5>
+    <h3 class="text-center indigo--text">{{ count }}</h3>
+    <h5 class="text-center indigo--text">Concerts Events</h5>
   </v-card>
 </template>
 
