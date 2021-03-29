@@ -1,6 +1,7 @@
 <template>
   <v-app-bar app class="white--text indigo">
     <h1>Event Finder</h1>
+
     <v-spacer></v-spacer>
     <h3 v-if="renderDate">
       {{ formatDate(startDate) }} - {{ formatDate(endDate) }}
@@ -12,6 +13,7 @@
 <script>
 import { mapState } from "vuex";
 import { dateMixin } from "../mixins/eventMixins";
+
 export default {
   mixins: [dateMixin],
   computed: {

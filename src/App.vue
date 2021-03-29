@@ -16,6 +16,7 @@
                 <concert-count />
               </v-col>
             </v-row>
+            <location-selection />
             <date-picker />
           </v-col>
           <v-col sm="12" lg="6" xl="7">
@@ -38,6 +39,7 @@ import TheaterCount from "./components/TheaterCount";
 import SportsTable from "./components/SportsTable";
 import ConcertTable from "./components/ConcertTable";
 import TheaterTable from "./components/TheaterTable";
+import LocationSelection from "./components/LocationSelection";
 
 export default {
   name: "App",
@@ -51,6 +53,7 @@ export default {
     SportsTable,
     ConcertTable,
     TheaterTable,
+    LocationSelection,
   },
 
   data: () => ({
