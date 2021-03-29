@@ -1,7 +1,7 @@
 <template>
   <v-card>
-    <h2 class="pa-3 indigo--text">Popular Theater Events</h2>
-    <v-simple-table>
+    <h2 class="pa-3 purple--text text--lighten-2">Popular Theater Events</h2>
+    <v-simple-table dense>
       <template v-slot:default>
         <thead>
           <tr>

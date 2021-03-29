@@ -4,8 +4,12 @@
       <app-header />
       <v-container>
         <v-row>
-          <v-col sm="12" lg="6">
-            <v-row class="mb-6">
+          <v-col sm="12" lg="5">
+            <location-selection />
+            <date-picker />
+          </v-col>
+          <v-col sm="12" lg="7">
+            <v-row class="mb-4">
               <v-col>
                 <sports-count />
               </v-col>
@@ -16,13 +20,9 @@
                 <concert-count />
               </v-col>
             </v-row>
-            <location-selection />
-            <date-picker />
-          </v-col>
-          <v-col sm="12" lg="6" xl="7">
-            <sports-table />
-            <theater-table />
-            <concert-table />
+            <sports-table class="mb-4" />
+            <theater-table class="mb-4" />
+            <concert-table class="mb-4" />
           </v-col>
         </v-row>
       </v-container>

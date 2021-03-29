@@ -2,7 +2,7 @@
   <v-row class="mt-3">
     <v-col class="align-center">
       <v-text-field
-        background-color="yellow lighten-2"
+        color="indigo"
         label="City"
         v-model="city"
         rounded
@@ -17,6 +17,8 @@
         label="State"
         persistent-hint
         single-line
+        outlined
+        color="indigo"
         @change="changeState"
       ></v-select>
     </v-col>
@@ -24,7 +26,6 @@
 </template>
 
 <script>
-// import stateList from "./StateList";
 import { mapMutations } from "vuex";
 export default {
   data() {
